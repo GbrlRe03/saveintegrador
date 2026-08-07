@@ -1,0 +1,22 @@
+import Reino.*
+import Misiones.*
+import Aldeanos.*
+import Deposito.*
+
+describe "Test Reino" {
+  const guerrero1=new Guerrero(nombre=guerrero1,energia=100,experiencia=200)
+  const granjero1=new Granjero(nombre=granjero1,energia=50,experiencia=150)
+  const comerciante1=new Comerciante(nombre=comerciante1,energia=150,experiencia=100)
+  const reino1=new Reino()
+  method initialize(){
+    reino1.agregarAldeano(guerrero1)
+    reino1.agregarAldeano(comerciante1)
+    reino1.agregarAldeano(granjero1)
+  }
+
+
+  test "creacion de aldeanos" {
+    assert.equals(reino1.habitantes(),[guerrero1,granjero1,comerciante1])
+  }
+
+}
