@@ -1,8 +1,9 @@
 import Deposito.*
+import Misiones.*
 class Aldeanos {
     var nombre
     var energia
-    var experiencia
+    var property experiencia
 
     method trabajar()
 
@@ -28,7 +29,11 @@ class Granjero inherits Aldeanos{
 }
 
 class Guerrero inherits Aldeanos{
-    var mision=defenderAldea
+    var property mision=DefenderAldea
+
+    method cambiarMision(unaMision){
+        mision=unaMision
+    }
 
     override method trabajar(){
         energia=energia-15
